@@ -1,0 +1,24 @@
+@author: ANKITA PAUL
+"""
+
+
+import pandas as pd
+from difflib import SequenceMatcher
+data=pd.read_excel('data.xlsx',dtype=str)
+z=input('Enter your Input')
+print('\n')
+x=0
+def int_eval():
+ for x in range(0,3):
+     a=(data['Column Name'][x]);
+     ratio=SequenceMatcher(None,a,z).ratio()
+     if ratio>=0.4:
+        print("I got a match");
+     elif ratio<0.4:
+        x+=1
+     return x
+     
+ print ("I didn't")
+ 
+
+int_eval()
